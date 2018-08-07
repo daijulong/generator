@@ -235,7 +235,7 @@ php generator make Admin/UserAuth -g=default
 
 ```
 DummyNamespace     ： 命名空间            Admin
-DummyFullNamespace ： 完整的命名空间       App\\Http\\Controllers\Admin
+DummyFullNamespace ： 完整的命名空间       App\Http\Controllers\Admin
 DummyClass         ： 类名                UserAuthController
 DummyName          ： 原始资源名称        UserAuth
 DummyCamelName     ： 驼峰命名的资源名称   UserAuth
