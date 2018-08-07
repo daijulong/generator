@@ -1,0 +1,22 @@
+{
+    "name": "daijulong/generator",
+    "description": "A universal PHP code generator",
+    "authors": [
+        {
+            "name": "daijulong",
+            "email": "daijulong@gmail.com"
+        }
+    ],
+    "require": {
+        "daijulong/console": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Daijulong\\Generator\\": "src/"
+        }
+    },
+    "bin": [
+        "generator"
+    ],
+    "minimum-stability": "dev"
+}

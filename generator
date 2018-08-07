@@ -1,0 +1,39 @@
+#!/usr/bin/env php
+<?php
+
+define('GENERATOR_VERSION', '1.0');
+
+$composer_autoloads = [
+    __DIR__ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php', // run at project root dir
+    __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'autoload.php', // run at vendor/bin/generator
+    __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'autoload.php', // run at vendor/daijulong/generator/generator
+];
+
+foreach ($composer_autoloads as $file) {
+    if (file_exists($file)) {
+        define('GENERATOR_COMPOSER_INSTALL', $file);
+        break;
+    }
+}
+
+unset($file);
+
+if (!defined('GENERATOR_COMPOSER_INSTALL')) {
+    fwrite(
+        STDERR,
+        "\033[1;37m\033[41m" .
+        PHP_EOL . PHP_EOL .
+        '    You need to set up the project dependencies using Composer:' . PHP_EOL . PHP_EOL .
+        '        composer install' . PHP_EOL . PHP_EOL .
+        '    You can learn all about Composer on https://getcomposer.org/.' . PHP_EOL
+        . "\033[0m" .
+        PHP_EOL
+    );
+    die(1);
+}
+
+require GENERATOR_COMPOSER_INSTALL;
+
+array_shift($argv);
+
+\Daijulong\Generator\Generator::command($argv);

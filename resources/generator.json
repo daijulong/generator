@@ -1,0 +1,70 @@
+{
+    "resources-path": "resources",
+    "groups": {
+        "default": {
+            "make": [
+                "controller",
+                "model",
+                "view-index",
+                "view-create",
+                "view-edit",
+                "view-show"
+            ],
+            "controller": {
+                "module": "controller"
+            },
+            "model": {
+                "module": "model"
+            },
+            "view-index": {
+                "module": "view",
+                "stub": "views/index"
+            },
+            "view-create": {
+                "module": "view",
+                "stub": "views/create"
+            },
+            "view-edit": {
+                "module": "view",
+                "stub": "views/edit"
+            },
+            "view-show": {
+                "module": "view",
+                "stub": "views/show"
+            }
+        }
+    },
+    "modules": {
+        "controller": {
+            "confirm": false,
+            "confirm-default": "yes",
+            "override": "ask",
+            "stub": "controller",
+            "save-path": "app/Http/Controllers/{space}",
+            "save-file": "{class}.php",
+            "class-prefix": "",
+            "class-postfix": "Controller",
+            "namespace": "App\\Http\\Controllers",
+            "ask": {}
+        },
+        "model": {
+            "confirm": false,
+            "confirm-default": "yes",
+            "override": "ask",
+            "stub": "model",
+            "save-path": "app/Models",
+            "save-file": "{class}.php",
+            "class-prefix": "",
+            "class-postfix": "",
+            "namespace": "App\\Models",
+            "ask": {}
+        },
+        "view": {
+            "confirm": false,
+            "confirm-default": "yes",
+            "override": "ask",
+            "save-path": "resources/views/{_space_}/{_name_}",
+            "save-file": "{stub}.php"
+        }
+    }
+}
