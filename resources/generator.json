@@ -52,7 +52,7 @@
             "confirm-default": "yes",
             "override": "ask",
             "stub": "model",
-            "save-path": "app/Models",
+            "save-path": "app/Models/{space}",
             "save-file": "{class}.php",
             "class-prefix": "",
             "class-postfix": "",

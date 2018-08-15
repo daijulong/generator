@@ -60,7 +60,7 @@ php generator make Admin/UserAuth
 
 1. app/Http/Controllers/Admin/UserAuthController.php
 
-1. app/Models/UserAuth.php
+1. app/Models/Admin/UserAuth.php
 
 1. resources/views/admin/user_auth/index.php
 
@@ -247,4 +247,4 @@ DummyUpperName     ： 大写的资源名称      USER_AUTH
 
 # License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](LICENSE) for more information.

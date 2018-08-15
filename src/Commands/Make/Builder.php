@@ -147,7 +147,7 @@ class Builder
         //命名空间
         $namespace = trim($this->config['namespace'], '\\');
         //完整的命名空间
-        $namespace_full = trim($this->config['namespace'], '\\') . '\\' . $this->names['name_space'];
+        $namespace_full = trim($this->config['namespace'], '\\') . ($this->names['name_space'] ? '\\' . $this->names['name_space'] : '');
         //类名
         $this->names['name_class'] = Helper::camelCase($this->config['class-prefix']) . $this->names['name_camel'] . Helper::camelCase($this->config['class-postfix']);
 
