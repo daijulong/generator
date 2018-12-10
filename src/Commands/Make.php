@@ -82,7 +82,7 @@ class Make extends Command
      */
     protected function parseName($origin_name)
     {
-        $names = explode('/', $origin_name);
+        $names = explode('/', str_replace('\\', '/', $origin_name));
         //名称（排除空间后）
         $name = array_pop($names);
         //名称（小写）
